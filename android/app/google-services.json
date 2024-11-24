@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "455500654726",
+    "project_id": "chat-dating-app-flutter",
+    "storage_bucket": "chat-dating-app-flutter.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:455500654726:android:d82888d335c8f92941c907",
+        "android_client_info": {
+          "package_name": "com.example.chat_dating_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCtHJlncDzVYKmA_Y6RDfvcl2rlT3y0qHc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
