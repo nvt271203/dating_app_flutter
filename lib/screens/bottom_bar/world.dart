@@ -283,7 +283,7 @@ class _WorldScreenState extends State<WorldScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Bản đồ với Marker tự động'),
+        title: const Text('Đối tượng lân cận'),
         centerTitle: true,
       ),
       body:

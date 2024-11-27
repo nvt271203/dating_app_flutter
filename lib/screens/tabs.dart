@@ -1,7 +1,7 @@
+import 'package:chat_dating_app/screens/bottom_bar/chats.dart';
 import 'package:chat_dating_app/screens/bottom_bar/profile.dart';
 import 'package:chat_dating_app/screens/bottom_bar/home.dart';
-import 'package:chat_dating_app/screens/bottom_bar/list_chat.dart';
-import 'package:chat_dating_app/screens/update_list_user.dart';
+import 'package:chat_dating_app/screens/bottom_bar/users.dart';
 import 'package:chat_dating_app/screens/bottom_bar/world.dart';
 import 'package:chat_dating_app/tools/tools_colors.dart';
 import 'package:flutter/material.dart';
@@ -33,11 +33,11 @@ class _TabsCreenState extends State<TabsCreen> {
     }
     if (_selectedPageIndex == 2) {
       // activePageTitel = 'World';
-      activePage = const WorldScreen();
+      activePage = const ChatsScreen();
     }
     if (_selectedPageIndex == 3) {
       // activePageTitel = 'List User';
-      activePage = const ListUserScreen();
+      activePage = const UserScreen();
     }
     if (_selectedPageIndex == 4) {
       // activePageTitel = '';
@@ -60,14 +60,13 @@ class _TabsCreenState extends State<TabsCreen> {
           // Màu khi được chọn
           unselectedItemColor: Colors.black.withOpacity(0.4),
           // Màu không được chọn
-          items: const [
+          items: [
             // Danh sách các item tab.
-            BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home', backgroundColor: Color(0xFF2D99AE)),
-            BottomNavigationBarItem(icon: Icon(Icons.ac_unit), label: 'World',backgroundColor: Color(0xFF2D99AE)),
-            BottomNavigationBarItem(icon: Icon(Icons.chat), label: 'Messages',backgroundColor: Color(0xFF2D99AE)),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.supervised_user_circle), label: 'Users', backgroundColor: Color(0xFF2D99AE)),
-            BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
+            BottomNavigationBarItem(icon: const Icon(Icons.home), label: 'Home', backgroundColor: ToolsColors.primary),
+            BottomNavigationBarItem(icon: const Icon(Icons.ac_unit), label: 'World',backgroundColor: ToolsColors.primary),
+            BottomNavigationBarItem(icon: const Icon(Icons.chat), label: 'Chats',backgroundColor: ToolsColors.primary),
+            BottomNavigationBarItem(icon: const Icon(Icons.supervised_user_circle), label: 'Users', backgroundColor: ToolsColors.primary),
+            BottomNavigationBarItem(icon: const Icon(Icons.person), label: 'Profile', backgroundColor: ToolsColors.primary),
           ]),
     );
   }

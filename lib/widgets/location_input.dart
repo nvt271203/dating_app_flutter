@@ -148,8 +148,8 @@ class _LocationInputState extends State<LocationScreen> {
   @override
   Widget build(BuildContext context) {
     Widget previewContent = Padding(
-      padding: const EdgeInsets.all(24.0),
-      child: const Text(
+      padding: EdgeInsets.all(24.0),
+      child: Text(
         'Nhấn "Lấy vị trí" để cập nhật vị trí của bạn nhé.',
         textAlign: TextAlign.center,
         style: TextStyle(
@@ -270,7 +270,7 @@ class _LocationInputState extends State<LocationScreen> {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            const Text(
+                             Text(
                               'Địa chỉ của bạn',
                               textAlign: TextAlign.left,
                               style: TextStyle(

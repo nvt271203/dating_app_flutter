@@ -1,3 +1,4 @@
+import 'package:chat_dating_app/screens/chat_messages.dart';
 import 'package:chat_dating_app/tools/tools_colors.dart';
 import 'package:chat_dating_app/tools/tools_format.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -57,8 +58,7 @@ class _ItemDetailUserState extends State<ItemDetailUser> {
                   children: [
                     FadeInImage(
                       placeholder: MemoryImage(kTransparentImage),
-                      image: const AssetImage(
-                          'assets/images/son_tung_mtp.jpg'),
+                      image: const AssetImage('assets/images/son_tung_mtp.jpg'),
                       height: 200,
                       width: double.infinity,
                       fit: BoxFit.cover,
@@ -71,8 +71,8 @@ class _ItemDetailUserState extends State<ItemDetailUser> {
                         child: Container(
                           decoration: BoxDecoration(
                               shape: BoxShape.circle,
-                              border: Border.all(
-                                  color: Colors.white, width: 2)),
+                              border:
+                                  Border.all(color: Colors.white, width: 2)),
                           // child: const CircleAvatar(foregroundImage: AssetImage('assets/images/avt_anh-son-tung-mtp.jpg'),),
                           child: CircleAvatar(
                             foregroundImage:
@@ -88,7 +88,6 @@ class _ItemDetailUserState extends State<ItemDetailUser> {
                 ),
 
                 Container(
-                  
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     // crossAxisAlignment: CrossAxisAlignment.center,
@@ -105,19 +104,22 @@ class _ItemDetailUserState extends State<ItemDetailUser> {
                       ),
                       Text(
                         '1k Nguời yêu thích',
-                        style:
-                        TextStyle(fontSize: 14, fontStyle: FontStyle.italic),
+                        style: TextStyle(
+                            fontSize: 14, fontStyle: FontStyle.italic),
                       ),
 
                       // nếu ko phải người dùng hiện tại mới cho nhấn yêu thích và nhắn tin.
-                      if(FirebaseAuth.instance.currentUser!.uid != widget.person.id.toString())
+                      if (FirebaseAuth.instance.currentUser!.uid !=
+                          widget.person.id.toString())
                         Padding(
                           padding: const EdgeInsets.all(20.0),
                           child: Container(
                             padding: const EdgeInsets.all(12.0),
                             decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(15.0), // Bo góc container ngoài
-                              color: Colors.white, // Màu nền cho container ngoài
+                              borderRadius: BorderRadius.circular(15.0),
+                              // Bo góc container ngoài
+                              color: Colors.white,
+                              // Màu nền cho container ngoài
                               boxShadow: [
                                 BoxShadow(
                                   color: Colors.grey.withOpacity(0.3),
@@ -136,10 +138,13 @@ class _ItemDetailUserState extends State<ItemDetailUser> {
                                     print('Yêu thích đã được nhấn');
                                   },
                                   child: Container(
-                                    padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+                                    padding: const EdgeInsets.symmetric(
+                                        vertical: 10, horizontal: 20),
                                     decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(10.0), // Bo góc phần tử
-                                      color: Colors.red.withOpacity(0.2), // Màu nền phần tử 1
+                                      borderRadius: BorderRadius.circular(10.0),
+                                      // Bo góc phần tử
+                                      color: Colors.red.withOpacity(
+                                          0.2), // Màu nền phần tử 1
                                     ),
                                     child: Row(
                                       children: [
@@ -147,7 +152,8 @@ class _ItemDetailUserState extends State<ItemDetailUser> {
                                           Icons.favorite,
                                           color: Colors.red,
                                         ),
-                                        SizedBox(width: 8), // Khoảng cách giữa icon và chữ
+                                        SizedBox(width: 8),
+                                        // Khoảng cách giữa icon và chữ
                                         Text(
                                           'Yêu thích',
                                           style: TextStyle(
@@ -163,14 +169,21 @@ class _ItemDetailUserState extends State<ItemDetailUser> {
                                 // Phần tử 2: Icon nhắn tin + chữ nhắn tin (Button)
                                 TextButton(
                                   onPressed: () {
-                                    // Logic khi nhấn vào button "Nhắn tin"
-                                    print('Nhắn tin đã được nhấn');
+                                    Navigator.of(context).push(
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                ChatMessagesScreen(
+                                                  personReceiver: widget.person,
+                                                )));
                                   },
                                   child: Container(
-                                    padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+                                    padding: const EdgeInsets.symmetric(
+                                        vertical: 10, horizontal: 20),
                                     decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(10.0), // Bo góc phần tử
-                                      color: Colors.blue.withOpacity(0.2), // Màu nền phần tử 2
+                                      borderRadius: BorderRadius.circular(10.0),
+                                      // Bo góc phần tử
+                                      color: Colors.blue.withOpacity(
+                                          0.2), // Màu nền phần tử 2
                                     ),
                                     child: Row(
                                       children: [
@@ -178,7 +191,8 @@ class _ItemDetailUserState extends State<ItemDetailUser> {
                                           Icons.message,
                                           color: Colors.blue,
                                         ),
-                                        SizedBox(width: 8), // Khoảng cách giữa icon và chữ
+                                        SizedBox(width: 8),
+                                        // Khoảng cách giữa icon và chữ
                                         Text(
                                           'Nhắn tin',
                                           style: TextStyle(
@@ -199,12 +213,9 @@ class _ItemDetailUserState extends State<ItemDetailUser> {
                       SizedBox(
                         height: 30,
                       ),
-                      
-
                     ],
                   ),
                 ),
-
 
                 Stack(
                   clipBehavior: Clip.none,
@@ -385,19 +396,22 @@ class _ItemDetailUserState extends State<ItemDetailUser> {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-
                             // for (final item in widget.person.hobbiesList!)
-                            SizedBox(height: 20,),
+                            SizedBox(
+                              height: 20,
+                            ),
                             Wrap(
                               // spacing: 16.0, // Khoảng cách giữa các phần tử ngang
                               // runSpacing: 16.0, // Khoảng cách giữa các dòng
-                              alignment: WrapAlignment.spaceEvenly, // Căn giữa các phần tử theo chiều ngang
+                              alignment: WrapAlignment.spaceEvenly,
+                              // Căn giữa các phần tử theo chiều ngang
                               children: widget.person.hobbiesList!.map((item) {
                                 return Container(
-                                  margin: const EdgeInsets.only(left: 10, right: 10, top: 5, bottom: 5
-                                  ),
+                                  margin: const EdgeInsets.only(
+                                      left: 10, right: 10, top: 5, bottom: 5),
                                   // Khoảng cách giữa các Text
-                                  padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 20, vertical: 10),
                                   // Khoảng cách bên trong
                                   decoration: BoxDecoration(
                                     color: ToolsColors.primary.withOpacity(0.3),
@@ -407,16 +421,17 @@ class _ItemDetailUserState extends State<ItemDetailUser> {
                                   ),
                                   child: Text(
                                     item.title as String,
-                                    style: const TextStyle(color: Colors.black,
-                                        fontStyle: FontStyle.italic,
-
+                                    style: const TextStyle(
+                                      color: Colors.black,
+                                      fontStyle: FontStyle.italic,
                                     ), // Màu chữ
                                   ),
                                 );
                               }).toList(),
                             ),
-                            SizedBox(height: 20,),
-
+                            SizedBox(
+                              height: 20,
+                            ),
                           ],
                         ),
                       ),
@@ -465,19 +480,23 @@ class _ItemDetailUserState extends State<ItemDetailUser> {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-
                             // for (final item in widget.person.hobbiesList!)
-                            SizedBox(height: 20,),
+                            SizedBox(
+                              height: 20,
+                            ),
                             Wrap(
                               // spacing: 16.0, // Khoảng cách giữa các phần tử ngang
                               // runSpacing: 16.0, // Khoảng cách giữa các dòng
-                              alignment: WrapAlignment.spaceEvenly, // Căn giữa các phần tử theo chiều ngang
-                              children: widget.person.personalitiesList!.map((item) {
+                              alignment: WrapAlignment.spaceEvenly,
+                              // Căn giữa các phần tử theo chiều ngang
+                              children:
+                                  widget.person.personalitiesList!.map((item) {
                                 return Container(
-                                  margin: const EdgeInsets.only(left: 10, right: 10, top: 5, bottom: 5
-                                  ),
+                                  margin: const EdgeInsets.only(
+                                      left: 10, right: 10, top: 5, bottom: 5),
                                   // Khoảng cách giữa các Text
-                                  padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 20, vertical: 10),
                                   // Khoảng cách bên trong
                                   decoration: BoxDecoration(
                                     color: ToolsColors.primary.withOpacity(0.3),
@@ -487,16 +506,17 @@ class _ItemDetailUserState extends State<ItemDetailUser> {
                                   ),
                                   child: Text(
                                     item.title as String,
-                                    style: const TextStyle(color: Colors.black,
+                                    style: const TextStyle(
+                                      color: Colors.black,
                                       fontStyle: FontStyle.italic,
-
                                     ), // Màu chữ
                                   ),
                                 );
                               }).toList(),
                             ),
-                            SizedBox(height: 20,),
-
+                            SizedBox(
+                              height: 20,
+                            ),
                           ],
                         ),
                       ),
@@ -506,7 +526,7 @@ class _ItemDetailUserState extends State<ItemDetailUser> {
                       left: 50,
                       child: Container(
                         padding:
-                        EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                            EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                         decoration: BoxDecoration(
                             color: ToolsColors.primary,
                             borderRadius: BorderRadius.circular(10)),
@@ -535,7 +555,7 @@ class _ItemDetailUserState extends State<ItemDetailUser> {
                             borderRadius: BorderRadius.circular(20),
                             border: Border.all(
                                 width: 2, color: ToolsColors.primary)),
-                        child: const Column(
+                        child:  Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Padding(
@@ -685,7 +705,7 @@ class _ItemDetailUserState extends State<ItemDetailUser> {
                             borderRadius: BorderRadius.circular(20),
                             border: Border.all(
                                 width: 2, color: ToolsColors.primary)),
-                        child: const Column(
+                        child:  Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Padding(

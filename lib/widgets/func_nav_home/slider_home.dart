@@ -39,13 +39,29 @@ class _SliderHomeState extends State<SliderHome> {
         child: Column(
           children: [
 
-            const Padding(
-              padding: EdgeInsets.only(top: 20),
-              child: Text('Slider intro', style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 18
+
+            Container(
+              margin: const EdgeInsets.only(top: 20),
+              padding:  EdgeInsets.symmetric(vertical: 10, horizontal: 20), // Giảm padding ngang để cân đối hơn
+              decoration:  BoxDecoration(
+                gradient: LinearGradient(
+                  colors: [
+                    ToolsColors.primary,
+                    Colors.white,
+                  ],
+                ),
+              ),
+              child: const Align(
+                alignment: Alignment.centerLeft, // Căn trái nội dung văn bản
+                child: Text(
+                  'Nổi bật hôm nay',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18,
+                  ),
+                ),
               ),),
-            ),
+            SizedBox(height: 20,),
             Padding(
               padding: const EdgeInsets.only(top: 0),
               child: ClipRRect(

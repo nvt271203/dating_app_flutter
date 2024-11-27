@@ -390,7 +390,8 @@ class _AuthStateScreenState extends State<AuthStateScreen> {
                             CustomTextfield(
                               controler: _passwordController,
                               hintText: "Password",
-                              keyboardType: TextInputType.visiblePassword,
+                              // keyboardType: TextInputType.visiblePassword,
+                              isObscureText: true, // Bật ẩn thông tin mật khẩu
                               prefixIcon: Icon(Icons.password),
                               validator: (value) {
                                 return person

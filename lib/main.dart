@@ -1,7 +1,5 @@
 import 'package:chat_dating_app/screens/auth.dart';
 import 'package:chat_dating_app/screens/bottom_bar/world.dart';
-import 'package:chat_dating_app/screens/chat.dart';
-import 'package:chat_dating_app/screens/drag_get_location.dart';
 import 'package:chat_dating_app/screens/first_options/Intro.dart';
 import 'package:chat_dating_app/screens/first_options/hoppy.dart';
 import 'package:chat_dating_app/screens/first_options/map.dart';

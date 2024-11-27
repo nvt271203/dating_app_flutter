@@ -1,9 +1,7 @@
 import 'package:chat_dating_app/main.dart';
 import 'package:chat_dating_app/models/Person.dart';
+import 'package:chat_dating_app/screens/settings.dart';
 import 'package:chat_dating_app/widgets/item_detail_user.dart';
-import 'package:chat_dating_app/widgets/user_message.dart';
-import 'package:chat_dating_app/widgets/header_user.dart';
-import 'package:chat_dating_app/widgets/new_message.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -65,6 +63,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
           icon: const Icon(Icons.settings), // Biểu tượng cài đặt
           onPressed: () {
             // Hành động khi nhấn nút cài đặt
+            Navigator.of(context).push(MaterialPageRoute(
+                builder: (context) => SettingsScreen(),));
           },
         ),
         actions: [

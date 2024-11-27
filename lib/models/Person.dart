@@ -93,6 +93,15 @@ class Person {
     return Person(null, null, null, null, null, null, null, null, null, null);
   }
 
+  int? get age {
+    if (birthday == null) return null; // Nếu không có ngày sinh, trả về null
+    final now = DateTime.now();
+    int age = now.year - birthday!.year;
+    if (now.month < birthday!.month || (now.month == birthday!.month && now.day < birthday!.day)) {
+      age--; // Giảm tuổi đi 1 nếu chưa đến ngày sinh nhật trong năm nay
+    }
+    return age;
+  }
   // String? get name => name;
   // set name(String? value) {
   //   name = value;
